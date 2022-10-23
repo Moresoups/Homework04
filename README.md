@@ -7,8 +7,7 @@ This quiz was created for Homework 4 challenge on web APIs. its is designed to t
  lastly, While I think this assigment has been compleated within paramanters of the expectations i must stress that the difficulty is such that it was shocking. almost every part of this code has been directly writen while looking at the in class examples. everytime I did anything I had to check to see if it was correct by looking through the class notes. its hard to explain but its is as if I am trying to learn english and I can't remeber the meaning of half the letters. I am concerned about my future in this course.
 
 # Screenshot
-<img src="assets/Screenshot 2022-10-23 163203.png" alt="websitescreenshot"
-<img src="Screenshot 2022-10-23 163203.png" alt="websitescreenshot">
+<img src="assets/Screenshot 2022-10-23 163203.png" alt="websitescreenshot">
 
 # Repo Link
 
