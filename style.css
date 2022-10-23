@@ -2,9 +2,11 @@ body {
     text-align: center;
     font-family: Helvetica, Arial, sans-serif;
     background-color: yellowgreen;
-    
 }
-
+.darkmode {
+    background-color: black;
+    color: white;
+  }
 button {
     padding: 5px;
     margin: 10px;

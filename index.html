@@ -8,6 +8,7 @@
     <title>Code Quiz</title>
 </head>
 <body>
+    <button onclick="darkmode()">Toggle dark mode</button>
     <div>
         <button class="view-score" id="view-score">View high score</button>
     </div>
@@ -21,5 +22,11 @@
     <div class="quiz-container" id="quiz-container"></div>
     <div id="answer-determination"></div>
     <script src="script.js"></script>
+    <script>
+        function darkmode() {
+           var element = document.body;
+           element.classList.toggle("darkmode");
+        }
+        </script>
 </body>
 </html>
