@@ -182,5 +182,22 @@ function endQuizPage() {
 
         playAgain.addEventListener"click", () => {
             location.reload();
-        })
+        }
     };
+
+    document.querySelector("input").value = "";
+
+    initialBox.addEventListener("submit", endQuizPage);
+    
+function renderInitials() {
+    submitInitialBtn.addEventListener('click', function(event) {
+        event.preventDefault;
+}
+)};
+
+clickStart.addEventListener('click', quiz);
+
+function myFunction() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+  }
