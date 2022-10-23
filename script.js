@@ -69,3 +69,81 @@ function adjustTime(amount) {
     }
     timerEl.textContent = "Time remaining: " + timeLeft + "seconds";
 }
+clickStart.onclick = timer;
+var renderQuestion = function (question) {
+    questionContainer.innerHTML = "";
+
+    var questionHeader = document.createElement("h2");
+    questionHeader.textContent = question.q;
+
+    var answerA = document.createElement("button");
+    answerA.textContent = question.a;
+    answerA.addEventListener("click", answerClick);
+
+    var answerB = document.createElement("button");
+    answerB.textContent = question.b;
+    answerB.addEventListener("click", answerClick);
+
+    var answerC = document.createElement("button");
+    answerC.textContent = question.c;
+    answerC.addEventListener("click", answerClick);
+
+    var answerD = document.createElement("button");
+    answerD.textContent = question.d;
+    answerD.addEventListener("click", answerClick);
+
+    questionContainer.appendChild(questionHeader);
+    questionContainer.appendChild(answerA);
+    questionContainer.appendChild(answerB);
+    questionContainer.appendChild(answerC);
+    questionContainer.appendChild(answerD);
+}
+
+var currentQuestionIndex = 0;
+var userScore = 0;
+var correctAnswer = questions[currentQuestionIndex].correct;
+var clickViewScores = document.getElementById("view-score");
+
+var answerClick = function(event) {
+    event.preventDefault();
+    var userAnswer = event.target.textContent;
+    correctAnswer = questions[currentQuestionIndex].correct;
+  
+    var answerDetermination = document.querySelector("#answer-determination");
+    if (userAnswer !== correctAnswer) {
+        adjustTime(-10);
+        answerDetermination.textContent = "Wrong! dumbass!";
+        currentQuestionIndex++;
+        if (currentQuestionIndex >= questions.length) {
+            endQuizPage();
+        } else {renderQuestion(questions[currentQuestionIndex])};
+
+    }
+    else if (userAnswer === correctAnswer) {
+        currentQuestionIndex++;
+        answerDetermination.textContent = "Correct!";
+        userScore++;
+        if (currentQuestionIndex >= questions.length) {
+            endQuizPage();
+        } else {renderQuestion(questions[currentQuestionIndex])};
+    }
+};
+
+var quiz = function (event) {
+    event.preventDefault();
+    resetDisplay();
+    renderQuestion(questions[currentQuestionIndex]);
+};
+
+function resetDisplay() {
+    questionContainer.innerHTML="";
+    document.querySelector("#intro-page").style.display = "none";
+}
+function highScores() {
+    let data = localStorage.getItem("object");
+    let getData = JSON.parse(data);
+    let name = getData.name;
+    let score = getData.score;
+    questionContainer.innerHTML = "";
+    questionContainer.innerHTML = name + " " + score;
+}
