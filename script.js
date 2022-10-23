@@ -147,3 +147,40 @@ function highScores() {
     questionContainer.innerHTML = "";
     questionContainer.innerHTML = name + " " + score;
 }
+
+var initials; 
+function endQuizPage() {
+    resetDisplay();
+    timerEl.textContent = "";
+    clearInterval(quizDuration);
+    var endPage = document.createElement("h2");
+    questionContainer.appendChild(endPage);
+
+    let blank = document.querySelector("#answer-determination");
+    blank.innerHTML = "";
+
+    endPage.innerHTML = "your final score is" + userScore;
+
+    var initialBox = document.createElement("input");
+    blank.appendChild(initialBox);
+
+    var submitInitialBtn = document.createElement("button");
+    submitInitialBtn.textContent = "Submit";
+    blank.appendChild(submitInitialBtn);
+        
+        if (initialBox.value.length === 0) return false;
+
+        let storeInitials = (...input) => {
+            let data = JSON.stringify({ "name":input[0], "score":input[1]})
+            localStorage.setItem("object", data)
+        }
+        storeInitials(initialBox.value, userScore);
+
+        var playAgain = document.createElement("button");
+        playAgain.textContent= "Play Again!";
+        blank.appendChild(playAgain);
+
+        playAgain.addEventListener"click", () => {
+            location.reload();
+        })
+    };
