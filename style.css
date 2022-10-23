@@ -8,11 +8,13 @@ body {
     color: white;
   }
 button {
+    display: center;
     padding: 5px;
     margin: 10px;
     border-radius: 30px;
     background-color: white;
 }
+
 
 .quiz-container button {
     justify-content: center;

@@ -15,18 +15,28 @@
     <div id="intro-page">
     <h1>Coding Quiz Challenge</h1>
     <p>Try to answer the following code-related questions within the time limit.
-        Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-    <button id="start">Start Quiz</button>
+        each wrong anwser will reduce your remaining time by 10 seconds. there are 6 questions in total.</p>
+    <button id="start" onclick="imageShow()">Start Quiz</button>
     </div>
     <h2 id="countdown"></h2>
     <div class="quiz-container" id="quiz-container"></div>
     <div id="answer-determination"></div>
-    <script src="script.js"></script>
-    <script>
+        <script>
         function darkmode() {
            var element = document.body;
            element.classList.toggle("darkmode");
         }
         </script>
+        <script>
+            function imageShow(){
+                   document.getElementById('image').style.display = "block";       
+                   }
+                   </script>
+  <img  id= "thinking" src="http://clipart-library.com/images/rcLoR78Xi.gif" alt="thinking gif" display="off"
+  display="none">
+
+    <script src="script.js"></script>
+
+
 </body>
 </html>
